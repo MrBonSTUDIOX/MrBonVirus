@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:keepScreenOn="true">
+
+    <!-- STAGE 1: HORROR INFECTION SCENE -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutHorrorScene"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#000000">
+
+        <!-- Red Infection Overlay -->
+        <ImageView
+            android:id="@+id/ivRedScreen"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0.85"
+            android:contentDescription="Infection Red Screen"
+            android:scaleType="fitXY"
+            android:src="@drawable/red_screen" />
+
+        <!-- Glitch Flash Overlay -->
+        <View
+            android:id="@+id/viewGlitchOverlay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0.0"
+            android:background="#FF0000" />
+
+        <!-- Top Hacking Banner -->
+        <TextView
+            android:id="@+id/tvTopAlert"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="28dp"
+            android:background="#CC000000"
+            android:fontFamily="monospace"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="CRITICAL SECURITY ALERT
+UNAUTHORIZED SYSTEM BREACH"
+            android:textColor="#FF2A2A"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- MrBon Virus Head -->
+        <ImageView
+            android:id="@+id/ivMrBonHead"
+            android:layout_width="260dp"
+            android:layout_height="310dp"
+            android:contentDescription="MrBon Virus Head"
+            android:scaleType="fitCenter"
+            android:src="@drawable/mrbon_head"
+            app:layout_constraintBottom_toTopOf="@id/tvHackingLog"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTopAlert" />
+
+        <!-- Live Hacking Terminal Feed -->
+        <TextView
+            android:id="@+id/tvHackingLog"
+            android:layout_width="0dp"
+            android:layout_height="96dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginBottom="12dp"
+            android:background="#B3000000"
+            android:fontFamily="monospace"
+            android:gravity="bottom|start"
+            android:padding="10dp"
+            android:text="> INJECTING MRBON_PAYLOAD.BIN...
+> BYPASSING KERNEL PROTECTION..."
+            android:textColor="#FF5555"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toTopOf="@id/layoutAntivirusTrigger"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <!-- IronTurboMax Antivirus Button -->
+        <LinearLayout
+            android:id="@+id/layoutAntivirusTrigger"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="28dp"
+            android:background="#CC06152D"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <ImageView
+                android:id="@+id/btnIronTurboMax"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:contentDescription="IronTurboMax Antivirus Logo"
+                android:src="@drawable/ironturbomax" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:fontFamily="monospace"
+                android:text="TAP TO RUN IRONTURBOMAX"
+                android:textColor="#66B2FF"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- STAGE 2: IRONTURBOMAX ANTIVIRUS SCANNING & ENDING 2 -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutAntivirusScene"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#071326"
+        android:padding="20dp"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/ivScanLogo"
+            android:layout_width="84dp"
+            android:layout_height="84dp"
+            android:layout_marginTop="16dp"
+            android:contentDescription="IronTurboMax Logo"
+            android:src="@drawable/ironturbomax"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvScanHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:fontFamily="monospace"
+            android:text="IRONTURBOMAX SECURITY SUITE"
+            android:textColor="#4DA6FF"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivScanLogo" />
+
+        <TextView
+            android:id="@+id/tvCurrentPhase"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="monospace"
+            android:gravity="center"
+            android:text="IronTurboMax Initializing..."
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvScanHeader" />
+
+        <ProgressBar
+            android:id="@+id/scanProgressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="0dp"
+            android:layout_height="16dp"
+            android:layout_marginTop="12dp"
+            android:max="100"
+            android:progress="0"
+            android:progressTint="#2196F3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvCurrentPhase" />
+
+        <TextView
+            android:id="@+id/tvProgressPercent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:fontFamily="monospace"
+            android:text="0%"
+            android:textColor="#90CAF9"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/scanProgressBar" />
+
+        <!-- Animated Folder & File Path Simulator -->
+        <TextView
+            android:id="@+id/tvSimulatedPath"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:background="#0D1F3D"
+            android:ellipsize="middle"
+            android:fontFamily="monospace"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:text="[DIR] /system/bin/initializing..."
+            android:textColor="#64B5F6"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvProgressPercent" />
+
+        <!-- Console Output / Ending Result Box -->
+        <TextView
+            android:id="@+id/tvScanConsole"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginBottom="16dp"
+            android:background="#040B16"
+            android:fontFamily="monospace"
+            android:padding="14dp"
+            android:text=""
+            android:textColor="#B0BEC5"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@id/btnAction"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvSimulatedPath" />
+
+        <Button
+            android:id="@+id/btnAction"
+            android:layout_width="0dp"
+            android:layout_height="52dp"
+            android:backgroundTint="#1976D2"
+            android:fontFamily="monospace"
+            android:text="RETRY SCAN"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- STAGE 3: ENDING 1 — FAILED (FAKE SHUTDOWN & BLACK SCREEN) -->
+    <LinearLayout
+        android:id="@+id/layoutFailedEnding"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#000000"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="28dp"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tvShutdownStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:gravity="center"
+            android:lineSpacingExtra="8dp"
+            android:text="SYSTEM SHUTDOWN
+
+MRBON VIRUS HAS TAKEN CONTROL
+
+ENDING 1 — FAILED"
+            android:textColor="#FF1E1E"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnRestartSimulation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:backgroundTint="#222222"
+            android:fontFamily="monospace"
+            android:paddingHorizontal="24dp"
+            android:paddingVertical="12dp"
+            android:text="REBOOT SIMULATION"
+            android:textColor="#AAAAAA"
+            android:textSize="13sp"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+</FrameLayout>
